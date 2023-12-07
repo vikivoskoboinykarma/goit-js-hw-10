@@ -10,7 +10,7 @@ const catInfo = document.querySelector('.cat-info');
 
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 
-breedSelect.style.marginBottom = '60px';
+breedSelect.style.marginBottom = '50px';
 
 loader.style.display = 'block';
 
