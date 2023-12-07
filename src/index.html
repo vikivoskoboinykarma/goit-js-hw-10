@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homework 10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css" integrity="sha512-Efn7JiUUnFow9mcpG2z/xwVuJHi7WXBpkXAxr4xMyiS1gKwepL/t3H+OK8A+Ryoem/2AMq7fHii+2N16IxIHFg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <select class="breed-select"></select>
-    <p class="loader">Loading data, please wait...</p>
-    <p class="error">Oops! Something went wrong! Try reloading the page!</p>
-    <div class="cat-info"></div>
+    <div class="container">
+      <select class="breed-select"></select>
+      <p class="loader"></p>
+      <p class="error"></p>
+      <div class="cat-info"></div>
+    </div>
 
-    <script src="index.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.js" integrity="sha512-cM0fMR11+g3IDp6HvGj2WB3K4F1RBrRHjQQ4fPLF1QmTNPPTtFQ8g9IzQ+EMg5bnvl/uvEnaVJHVqj9AYprzzQ==" crossorigin="anonymous"></script>
+    <script src="js/cat-api.js" type="module"></script>
+    <script src="js/index.js" type="module"></script>
   </body>
 </html>
