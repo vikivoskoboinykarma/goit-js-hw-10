@@ -1,5 +1,3 @@
-// index.js
-
 import SlimSelect from 'slim-select';
 import Notiflix from 'notiflix';
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
@@ -8,11 +6,10 @@ const breedSelect = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
 const catInfo = document.querySelector('.cat-info');
 
-import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
-
 breedSelect.style.marginBottom = '50px';
 
 loader.style.display = 'block';
+breedSelect.classList.add('is-hidden');
 
 fetchBreeds()
   .then(breeds => {
@@ -28,7 +25,7 @@ fetchBreeds()
   })
   .catch(error => {
     loader.style.display = 'none';
-    breedSelect.classList.add('is-hidden');
+    breedSelect.classList.remove('is-hidden');
 
     Notiflix.Notify.failure(
       'Oops! Something went wrong! Try reloading the page!'
@@ -44,7 +41,6 @@ breedSelect.addEventListener('change', function () {
   fetchCatByBreed(selectedBreedId)
     .then(breeds => {
       loader.style.display = 'none';
-      breedSelect.classList.remove('is-hidden');
 
       if (
         Array.isArray(breeds) &&
@@ -80,7 +76,6 @@ breedSelect.addEventListener('change', function () {
         Notiflix.Notify.failure(
           'Oops! Something went wrong! Try reloading the page!'
         );
-        breedSelect.classList.add('is-hidden');
         console.error(
           'Incomplete or no data received for the selected breed:',
           breeds
@@ -88,7 +83,6 @@ breedSelect.addEventListener('change', function () {
       }
     })
     .catch(error => {
-      breedSelect.classList.add('is-hidden');
       Notiflix.Notify.failure(
         'Oops! Something went wrong! Try reloading the page!'
       );
